@@ -1,0 +1,8 @@
+Ce programme justifie du texte
+et remplace les espaces consécutifs 
+par un seul espace. Il limite aussi
+chaque ligne à 80 caractères maximum.
+
+Les lignes vides
+sont conservées.
+

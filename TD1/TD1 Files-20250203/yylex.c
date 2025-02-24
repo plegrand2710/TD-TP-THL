@@ -1,5 +1,6 @@
+#line 2 "yylex.c"
 
-#line 3 "lex.yy.c"
+#line 4 "yylex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -351,8 +352,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 4
-#define YY_END_OF_BUFFER 5
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,15 +361,15 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[8] =
+static const flex_int16_t yy_accept[9] =
     {   0,
-        0,    0,    5,    3,    1,    2,    0
+        0,    0,    6,    4,    1,    2,    3,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
+        1,    1,    3,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -399,27 +400,27 @@ static const YY_CHAR yy_ec[256] =
 
 static const YY_CHAR yy_meta[4] =
     {   0,
-        1,    1,    1
+        1,    2,    1
     } ;
 
-static const flex_int16_t yy_base[8] =
+static const flex_int16_t yy_base[10] =
     {   0,
-        0,    0,    4,    5,    5,    5,    5
+        0,    0,    5,    6,    6,    0,    6,    6,    2
     } ;
 
-static const flex_int16_t yy_def[8] =
+static const flex_int16_t yy_def[10] =
     {   0,
-        7,    1,    7,    7,    7,    7,    0
+        8,    1,    8,    8,    8,    9,    8,    0,    8
     } ;
 
-static const flex_int16_t yy_nxt[9] =
+static const flex_int16_t yy_nxt[10] =
     {   0,
-        4,    5,    6,    7,    3,    7,    7,    7
+        4,    5,    6,    7,    8,    3,    8,    8,    8
     } ;
 
-static const flex_int16_t yy_chk[9] =
+static const flex_int16_t yy_chk[10] =
     {   0,
-        1,    1,    1,    3,    7,    7,    7,    7
+        1,    1,    1,    9,    3,    8,    8,    8,    8
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -436,12 +437,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "td1exo761.flex"
+#line 1 "td1exo78.flex"
 #define YY_NO_INPUT 1
-#line 4 "td1exo761.flex"
-int car_pos = 0;
-#line 444 "lex.yy.c"
-#line 445 "lex.yy.c"
+#line 4 "td1exo78.flex"
+#include <stdio.h>
+
+char *newline_format = "\n"; // Par défaut, mode Unix
+#line 447 "yylex.c"
+#line 448 "yylex.c"
 
 #define INITIAL 0
 
@@ -656,10 +659,10 @@ YY_DECL
 		}
 
 	{
-#line 7 "td1exo761.flex"
+#line 9 "td1exo78.flex"
 
 
-#line 663 "lex.yy.c"
+#line 666 "yylex.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -686,13 +689,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 8 )
+				if ( yy_current_state >= 9 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 5 );
+		while ( yy_base[yy_current_state] != 6 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -717,31 +720,33 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
+/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 9 "td1exo761.flex"
-{ 
-    int spaces = 8 - (car_pos % 8);
-    printf("%*s", spaces, " ");
-    car_pos += spaces;
-}
+#line 11 "td1exo78.flex"
+{ printf("%s", newline_format); }
 	YY_BREAK
 case 2:
-/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 15 "td1exo761.flex"
-{ ECHO; car_pos = 0; }
+#line 13 "td1exo78.flex"
+{ printf("%s", newline_format); }
 	YY_BREAK
 case 3:
+/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 17 "td1exo761.flex"
-{ ECHO; car_pos++; }
+#line 15 "td1exo78.flex"
+{ printf("%s", newline_format); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "td1exo761.flex"
+#line 17 "td1exo78.flex"
+{ printf("%s", yytext); }
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 19 "td1exo78.flex"
 ECHO;
 	YY_BREAK
-#line 745 "lex.yy.c"
+#line 750 "yylex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1038,7 +1043,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 8 )
+			if ( yy_current_state >= 9 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1066,11 +1071,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 8 )
+		if ( yy_current_state >= 9 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 7);
+	yy_is_jam = (yy_current_state == 8);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1709,13 +1714,28 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 19 "td1exo761.flex"
+#line 19 "td1exo78.flex"
 
 
-int yywrap(void) { return 1; }
+int yywrap(void) {
+    return 1;
+}
 
 int main(int argc, char *argv[]) {
-    while (yylex() != 0);
+    if (argc > 1) {
+        if (strcmp(argv[1], "unix") == 0) {
+            newline_format = "\n";
+        } else if (strcmp(argv[1], "mac") == 0) {
+            newline_format = "\r";
+        } else if (strcmp(argv[1], "dos") == 0) {
+            newline_format = "\r\n";
+        } else {
+            fprintf(stderr, "Usage: %s [unix|mac|dos]\n", argv[0]);
+            return 1;
+        }
+    }
+
+    yylex();
     return 0;
 }
 
