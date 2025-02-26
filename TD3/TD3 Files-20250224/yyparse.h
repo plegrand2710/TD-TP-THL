@@ -54,8 +54,10 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    TOK = 258,                     /* TOK  */
-    POINTVIRGULE = 259             /* POINTVIRGULE  */
+    GA = 258,                      /* GA  */
+    BU = 259,                      /* BU  */
+    ZO = 260,                      /* ZO  */
+    MEU = 261                      /* MEU  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif

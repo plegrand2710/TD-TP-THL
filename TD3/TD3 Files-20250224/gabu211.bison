@@ -21,17 +21,8 @@ input:
 
 word:
 
-    GA MEU
-  | BU ZO
-
-  | GA word MEU
-  | BU word ZO
-  
-  | GA word word MEU
-  | BU word word ZO
-  
-  | GA word word word MEU
-  | BU word word word ZO
+  | word GA word MEU
+  | word BU word ZO
   ;
 
 %%
